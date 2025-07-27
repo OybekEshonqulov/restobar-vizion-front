@@ -1,4 +1,6 @@
 import { Card, CardContent } from './card';
+import { MenuItems } from './menu-items';
+import { useState } from 'react';
 import drinksImage from '@/assets/drinks-category.jpg';
 import hookahImage from '@/assets/hookah-category.jpg';
 import plovImage from '@/assets/plov-category.jpg';
@@ -32,6 +34,8 @@ const CategoryCard = ({ title, image, onClick }: CategoryCardProps) => (
 );
 
 export const MenuCategories = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   const categories = [
     { title: 'Drinks', image: drinksImage },
     { title: 'Hookah', image: hookahImage },
@@ -39,6 +43,15 @@ export const MenuCategories = () => {
     { title: 'Steaks', image: steaksImage },
     { title: 'Salads', image: saladsImage },
   ];
+
+  if (selectedCategory) {
+    return (
+      <MenuItems 
+        category={selectedCategory} 
+        onBack={() => setSelectedCategory(null)} 
+      />
+    );
+  }
 
   return (
     <section id="menu" className="py-20 bg-background">
@@ -58,7 +71,7 @@ export const MenuCategories = () => {
               key={category.title}
               title={category.title}
               image={category.image}
-              onClick={() => console.log(`Navigate to ${category.title}`)}
+              onClick={() => setSelectedCategory(category.title)}
             />
           ))}
         </div>
