@@ -165,6 +165,43 @@ const menuData: Record<string, MenuItem[]> = {
       price: '$18',
       image: '/api/placeholder/300/200'
     }
+  ],
+  'News': [
+    {
+      id: '21',
+      name: 'Grand Opening Special',
+      description: 'Get 20% off on all dishes this month! Valid until end of month.',
+      price: 'NEW',
+      image: '/api/placeholder/300/200'
+    },
+    {
+      id: '22',
+      name: 'Live Music Nights',
+      description: 'Every Friday and Saturday - Live performances starting 8PM',
+      price: 'EVENT',
+      image: '/api/placeholder/300/200'
+    },
+    {
+      id: '23',
+      name: 'Happy Hour Extended',
+      description: 'Now from 5PM to 8PM - 50% off on selected drinks',
+      price: 'PROMO',
+      image: '/api/placeholder/300/200'
+    },
+    {
+      id: '24',
+      name: 'Chef\'s Special Menu',
+      description: 'Try our exclusive seasonal dishes available this week',
+      price: 'LIMITED',
+      image: '/api/placeholder/300/200'
+    },
+    {
+      id: '25',
+      name: 'Karaoke Tournament',
+      description: 'Monthly karaoke competition with cash prizes - Register now',
+      price: 'CONTEST',
+      image: '/api/placeholder/300/200'
+    }
   ]
 };
 

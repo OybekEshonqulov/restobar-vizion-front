@@ -6,6 +6,7 @@ import hookahImage from '@/assets/hookah-category.jpg';
 import plovImage from '@/assets/plov-category.jpg';
 import steaksImage from '@/assets/steaks-category.jpg';
 import saladsImage from '@/assets/salads-category.jpg';
+import newsImage from '@/assets/news-category.jpg';
 
 interface CategoryCardProps {
   title: string;
@@ -42,6 +43,7 @@ export const MenuCategories = () => {
     { title: 'Plov', image: plovImage },
     { title: 'Steaks', image: steaksImage },
     { title: 'Salads', image: saladsImage },
+    { title: 'News', image: newsImage },
   ];
 
   if (selectedCategory) {
