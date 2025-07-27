@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				/* Restaurant Custom Colors */
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					light: 'hsl(var(--gold-light))',
+					dark: 'hsl(var(--gold-dark))'
+				},
+				restaurant: {
+					bg: 'hsl(var(--dark-bg))',
+					card: 'hsl(var(--dark-card))',
+					surface: 'hsl(var(--dark-surface))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +78,18 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-dark': 'var(--gradient-dark)'
+			},
+			boxShadow: {
+				'gold': 'var(--shadow-gold)',
+				'elegant': 'var(--shadow-elegant)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bounce-custom': 'var(--transition-bounce)'
 			},
 			keyframes: {
 				'accordion-down': {
