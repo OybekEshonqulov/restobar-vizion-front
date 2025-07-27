@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from './button';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoSvg from '@/assets/logo.svg';
 
 interface NavigationProps {
@@ -9,17 +10,26 @@ interface NavigationProps {
 
 export const Navigation = ({ onMenuClick }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Menu', href: '#menu' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', isRoute: true },
+    { name: 'Menu', href: '#menu', isRoute: false },
+    { name: 'Gallery', href: '/gallery', isRoute: true },
+    { name: 'Order Online', href: '/order', isRoute: true },
+    { name: 'Rewards', href: '/loyalty', isRoute: true },
+    { name: 'About', href: '#about', isRoute: false },
+    { name: 'Contact', href: '/contact', isRoute: true },
   ];
 
-  const handleMenuClick = (href: string) => {
-    const section = href.replace('#', '');
-    onMenuClick?.(section);
+  const handleMenuClick = (item: { name: string; href: string; isRoute: boolean }) => {
+    if (item.isRoute) {
+      navigate(item.href);
+    } else {
+      const section = item.href.replace('#', '');
+      onMenuClick?.(section);
+    }
     setIsMenuOpen(false);
   };
 
@@ -37,13 +47,28 @@ export const Navigation = ({ onMenuClick }: NavigationProps) => {
             {menuItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleMenuClick(item.href)}
-                className="text-foreground hover:text-primary transition-colors"
+                onClick={() => handleMenuClick(item)}
+                className={`text-foreground hover:text-primary transition-colors ${
+                  (item.isRoute && location.pathname === item.href) || 
+                  (!item.isRoute && location.pathname === '/' && item.href === '#home')
+                    ? 'text-primary font-semibold' 
+                    : ''
+                }`}
               >
                 {item.name}
               </button>
             ))}
-            <Button variant="default" size="sm">
+            <Button 
+              variant="default" 
+              size="sm"
+              onClick={() => {
+                if (location.pathname === '/') {
+                  onMenuClick?.('contact');
+                } else {
+                  navigate('/#contact');
+                }
+              }}
+            >
               Book Table
             </Button>
           </div>
@@ -67,13 +92,30 @@ export const Navigation = ({ onMenuClick }: NavigationProps) => {
               {menuItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => handleMenuClick(item.href)}
-                  className="text-foreground hover:text-primary transition-colors text-left"
+                  onClick={() => handleMenuClick(item)}
+                  className={`text-foreground hover:text-primary transition-colors text-left ${
+                    (item.isRoute && location.pathname === item.href) || 
+                    (!item.isRoute && location.pathname === '/' && item.href === '#home')
+                      ? 'text-primary font-semibold' 
+                      : ''
+                  }`}
                 >
                   {item.name}
                 </button>
               ))}
-              <Button variant="default" size="sm" className="w-fit">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="w-fit"
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    onMenuClick?.('contact');
+                  } else {
+                    navigate('/#contact');
+                  }
+                  setIsMenuOpen(false);
+                }}
+              >
                 Book Table
               </Button>
             </div>
