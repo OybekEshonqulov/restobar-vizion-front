@@ -2,7 +2,9 @@ import { Navigation } from '@/components/ui/navigation';
 import { HeroSection } from '@/components/ui/hero-section';
 import { AmenitiesSection } from '@/components/ui/amenities-section';
 import { MenuCategories } from '@/components/ui/menu-categories';
+import { DailySpecials } from '@/components/ui/daily-specials';
 import { AboutSection } from '@/components/ui/about-section';
+import { ReviewsSection } from '@/components/ui/reviews-section';
 import { BookingSection } from '@/components/ui/booking-section';
 import { Footer } from '@/components/ui/footer';
 
@@ -23,7 +25,9 @@ const Index = () => {
       />
       <AmenitiesSection />
       <MenuCategories />
+      <DailySpecials />
       <AboutSection />
+      <ReviewsSection />
       <BookingSection />
       <Footer />
     </div>

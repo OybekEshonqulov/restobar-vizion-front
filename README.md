@@ -60,6 +60,37 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## New Features Added
+
+This restaurant website now includes enhanced functionality:
+
+### 🍽️ **Core Features:**
+- **Gallery Page** (`/gallery`) - Stunning photo gallery with category filtering
+- **Online Ordering** (`/order`) - Full e-commerce functionality with cart system
+- **Contact Page** (`/contact`) - Comprehensive contact information and contact form
+- **Loyalty Program** (`/loyalty`) - Customer rewards system with tiers and point redemption
+
+### 🌟 **Homepage Enhancements:**
+- **Customer Reviews Section** - Real customer testimonials with ratings
+- **Daily Specials** - Chef's featured dishes with dynamic pricing
+- **Enhanced Navigation** - Improved routing between all pages
+- **Modern UI Components** - Professional restaurant industry design
+
+### 📱 **User Experience:**
+- Responsive design across all devices
+- Smooth navigation and transitions  
+- Professional cart functionality
+- Interactive loyalty program dashboard
+- Image galleries with filtering
+- Real-time form validation
+
+### 🎯 **Business Features:**
+- Online menu ordering with pricing
+- Customer loyalty tracking
+- Contact form integration
+- Photo showcase capabilities
+- Promotional daily specials display
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/3e9acedf-7854-4bed-8367-ccc1c97c8f98) and click on Share -> Publish.
